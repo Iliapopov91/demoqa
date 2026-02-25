@@ -11,7 +11,7 @@ public class SimpleJUnitTest {
 
     @BeforeEach
     void beforeEach() {
-        System.out.println("###    beforeEach()");
+        System.out.println("###  beforeEach()");
         result = getResult();
     }
 
