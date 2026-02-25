@@ -20,7 +20,11 @@ public class SimpleJUnitTest {
         System.out.println("###    afterEach()\n");
         result = 0;
     }
-
+    @AfterEach
+    void afterEach() {
+        System.out.println("###    afterEach()\n");
+        result = 0;
+    }
 
     @AfterAll
     static void afterAll() {
