@@ -24,7 +24,7 @@ public class SimpleJUnitTest {
 
     @AfterAll
     static void afterAll() {
-        System.out.println("\n# afterAll()\n");
+        System.out.println("\n###### afterAll()\n");
     }
 
     @Test
