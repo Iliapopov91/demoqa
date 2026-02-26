@@ -15,7 +15,7 @@ public class TextBoxTests {
     static void beforeAll() {
 
         //Задаём разрешение браузера
-        Configuration.browserSize= "2560*1440";
+        Configuration.browserSize= "2560x1440";
 
         //Задаём URL
         Configuration.baseUrl = "https://demoqa.com";
@@ -26,7 +26,10 @@ public class TextBoxTests {
         //Оставляем браузер открытым
         Configuration.holdBrowserOpen = true;
 
-        //Конфигурация таймаута (default 4000
+        // Чтобы браузер НЕ перезапускался, если тест упал
+        Configuration.reopenBrowserOnFail = false;
+
+        //Конфигурация таймаута (default 4000)
         Configuration.timeout = 5000;
     }
 
