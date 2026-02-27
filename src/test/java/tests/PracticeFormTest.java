@@ -24,12 +24,10 @@ public class PracticeFormTest {
 
         //Оставляем браузер открытым
         Configuration.holdBrowserOpen = true;
-
     }
 
-
     @Test
-    void RegistrationForm () {
+    public void registrationForm () {
 
         //Открыть demoqa
         open("/automation-practice-form");
@@ -56,13 +54,11 @@ public class PracticeFormTest {
         $(".react-datepicker__day.react-datepicker__day--008").click();
 
         // Заполнить Subjects
-        $("#subjectsInput").setValue("Физ-ра"); //Поле остаётся НЕ заполненным даже вручную
-
+        $("#subjectsInput").setValue("Maths").pressEnter();
         // Заполнить Hobbies
         $("#hobbies-checkbox-2").click();
 
         // Вставить Picture
-        //$("#uploadPicture").click();
         $("#uploadPicture").uploadFile(new File("C:/ForSchool/123.gif"));
 
         // Заполнить Current Address
@@ -78,11 +74,6 @@ public class PracticeFormTest {
 
         //Нажать Submit
         $("#submit").click();
-    }
-
-
-    @Test
-    void CheckRegistrationForm () {
 
         //Проверка результатов по вхождению
         $("div.table-responsive").shouldHave(text("Илья Леопардович"));
