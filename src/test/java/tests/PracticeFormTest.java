@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTest {
@@ -76,16 +77,26 @@ public class PracticeFormTest {
         $("#submit").click();
 
         //Проверка результатов по вхождению
-        $("div.table-responsive").shouldHave(text("Илья Леопардович"));
-        $("div.table-responsive").shouldHave(text("test@test.ru"));
-        $("div.table-responsive").shouldHave(text("Other"));
-        $("div.table-responsive").shouldHave(text("9067241700"));
-        $("div.table-responsive").shouldHave(text("08 August,1991"));
-        // $("div.table-responsive").shouldHave(text("Физ-ра")); // Исключена - возвращает null
-        $("div.table-responsive").shouldHave(text("Reading"));
-        $("div.table-responsive").shouldHave(text("123.gif\n"));
-        $("div.table-responsive").shouldHave(text("Ivanovo"));
-        $("div.table-responsive").shouldHave(text("Haryana Panipat"));
+        $(".table-responsive").$(byText("Student Name")).parent()
+                .shouldHave(text("Илья Леопардович"));
+        $(".table-responsive").$(byText("Student Email")).parent()
+                .shouldHave(text("test@test.ru"));
+        $(".table-responsive").$(byText("Gender")).parent()
+                .shouldHave(text("Other"));
+        $(".table-responsive").$(byText("Mobile")).parent()
+                .shouldHave(text("9067241700"));
+        $(".table-responsive").$(byText("Date of Birth")).parent()
+                .shouldHave(text("08 August,1991"));
+        $(".table-responsive").$(byText("Subjects")).parent()
+                .shouldHave(text("Maths"));
+        $(".table-responsive").$(byText("Hobbies")).parent()
+                .shouldHave(text("Reading"));
+        $(".table-responsive").$(byText("Picture")).parent()
+                .shouldHave(text("123.gif"));
+        $(".table-responsive").$(byText("Address")).parent()
+                .shouldHave(text("Ivanovo"));
+        $(".table-responsive").$(byText("State and City")).parent()
+                .shouldHave(text("Haryana Panipat"));
 
 
     }
