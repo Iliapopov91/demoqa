@@ -56,6 +56,7 @@ public class PracticeFormTest {
 
         // Заполнить Subjects
         $("#subjectsInput").setValue("Maths").pressEnter();
+
         // Заполнить Hobbies
         $("#hobbies-checkbox-2").click();
 
