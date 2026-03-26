@@ -28,7 +28,7 @@ public class PracticeFormTest {
     }
 
     @Test
-    public void registrationForm () {
+    public void practiceForm () {
 
         //Открыть demoqa
         open("/automation-practice-form");
