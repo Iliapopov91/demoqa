@@ -25,13 +25,10 @@ public class PracticeFormPageObjectTest extends TestBase {
                 .setGender("Other")
                 .setUserNumber("9067241700")
                 .setCurrentAddress("Ivanovo")
-                .setDateOfBirth("08", "August", "1991");
+                .setDateOfBirth("08", "August", "1991")
+                .setHobbies("Reading")
+                .setSubjects("Maths");
 
-        // Заполнить Subjects
-        $("#subjectsInput").setValue("Maths").pressEnter();
-
-        // Заполнить Hobbies
-        $("#hobbies-checkbox-2").click();
 
         // Вставить Picture
         $("#uploadPicture").uploadFile(new File("C:/ForSchool/123.gif"));
@@ -47,7 +44,8 @@ public class PracticeFormPageObjectTest extends TestBase {
         //Нажать Submit
         $("#submit").click();
 
-        //Проверка результатов по вхождению
+        //Проверка
+
         practicePage.checkResult("Student Name", "Илья Леопардович")
                 .checkResult("Student Email", "test@test.ru")
                 .checkResult("Gender", "Other")

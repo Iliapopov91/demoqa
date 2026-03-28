@@ -2,12 +2,15 @@ package pages;
 
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 import pages.components.CalendarComponent;
+import pages.components.CheckResultComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static org.openqa.selenium.bidi.script.LocalValue.setValue;
 
 public class PracticePage {
     private SelenideElement firstNameInput = $("#firstName"),
@@ -16,10 +19,15 @@ public class PracticePage {
     userNumberInput = $("#userNumber"),
     currentAddressInput = $("#currentAddress"),
     genderWrapper = $("#genterWrapper"),
-    calendarInput = $("#dateOfBirthInput");
+    calendarInput = $("#dateOfBirthInput"),
+    hobbiesWrapper = $("#hobbiesWrapper"),
+    subjectsInput = $("#subjectsInput");
+
+    //checkResult = $(".table-responsive");
 
 
     CalendarComponent calendarComponent = new CalendarComponent();
+    CheckResultComponent checkResultComponent = new CheckResultComponent();
 
     public PracticePage openPage() {
         open("/automation-practice-form");
@@ -65,15 +73,24 @@ public class PracticePage {
 
         return this;
     }
+    public PracticePage setHobbies(String value) {
+        hobbiesWrapper.$(byText(value)).click();
 
+        return this;
+    }
+    public PracticePage setSubjects(String value) {
+        subjectsInput.setValue(value).pressEnter();
 
+        return this;
+    }
 
-    //Проверка
+    //Проверка - вынести в отдельный java class (пересмотреть где озвучивают дз)
     public PracticePage checkResult (String key, String value) {
         $(".table-responsive").$(byText(key)).parent()
                 .shouldHave(text(value));
 
 
         return this;
+
     }
 }
