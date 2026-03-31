@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.PracticePage;
 
@@ -7,9 +8,30 @@ public class PracticeFormPageObjectTest extends TestBase {
 
     PracticePage practicePage = new PracticePage();
 
+//    @Test
+//    @Tag("negative")
+//    void negativeRegistrationTest (){
+//        practicePage.openPage()
+//                .setFirstName("Илья")
+//
+//                .clickSubmitButton();
+//    }
+    @Test
+    @Tag("smoke")
+    void shortRegistrationTest (){
+        practicePage.openPage()
+                .setFirstName("Илья")
+                .setLastName("Леопардович")
+                .setGender("Other")
+                .setDateOfBirth("08", "August", "1991")
+                .setUserNumber("9067241700")
+                .clickSubmitButton();
+    }
+
 
     @Test
-    void practiceForm () {
+    @Tag("regress")
+    void registrationUsingAllFieldsTest () {
         practicePage.openPage()
                 .setFirstName("Илья")
                 .setLastName("Леопардович")

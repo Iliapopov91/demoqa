@@ -98,11 +98,7 @@ public class PracticePage {
     public PracticePage checkResult (String key, String value) {
         $(".table-responsive").$(byText(key)).parent()
                 .shouldHave(text(value));
-
-
         return this;
-
-
 
     }
 }
