@@ -5,6 +5,8 @@ import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 import pages.components.CheckResultComponent;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -24,6 +26,7 @@ public class PracticePage {
     stateWrapper = $("#stateCity-wrapper"),
     cityList = $("#react-select-4-input"),
     cityWrapper = $("#stateCity-wrapper"),
+    uploadPicture = $("#uploadPicture"),
     submitButton = $("#submit");
 
 
@@ -79,6 +82,11 @@ public class PracticePage {
     }
     public PracticePage setCity(String value) {
         cityList.setValue(value).pressEnter();
+        return this;
+    }
+    public PracticePage uploadPicture(String fileName) {
+        File file = new File("C:/ForSchool/" + fileName);
+        uploadPicture.uploadFile(file);
         return this;
     }
     public PracticePage clickSubmitButton() {

@@ -3,10 +3,6 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.PracticePage;
 
-import java.io.File;
-
-import static com.codeborne.selenide.Selenide.*;
-
 public class PracticeFormPageObjectTest extends TestBase {
 
     PracticePage practicePage = new PracticePage();
@@ -26,10 +22,8 @@ public class PracticeFormPageObjectTest extends TestBase {
                 .setSubjects("Maths")
                 .setState("Haryana")
                 .setCity("Panipat")
+                .uploadPicture("123.gif")
                 .clickSubmitButton();
-
-        $("#uploadPicture").uploadFile(new File("C:/ForSchool/123.gif"));
-
 
 
         practicePage.checkResult("Student Name", "Илья Леопардович")
