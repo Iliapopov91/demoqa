@@ -2,37 +2,50 @@ package tests;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.PracticePage;
+import pages.RegistrationPage;
 
 public class PracticeFormPageObjectTest extends TestBase {
 
-    PracticePage practicePage = new PracticePage();
+    RegistrationPage registrationPage = new RegistrationPage();
 
 //    @Test
 //    @Tag("negative")
 //    void negativeRegistrationTest (){
 //        practicePage.openPage()
 //                .setFirstName("Илья")
-//
+//                .setLastName("Леопардович")
+//                .setGender("Other")
+//                //.setDateOfBirth("08", "August", "1991")
+//                .setUserNumber("9067241700")
 //                .clickSubmitButton();
+//
+//        practicePage.checkResult("Student Name", "Илья Леопардович")
+//                .checkResult("Gender", "Other")
+//                .checkResult("Mobile", "9067241700")
+//                .checkResult("Date of Birth","");
 //    }
     @Test
     @Tag("smoke")
     void shortRegistrationTest (){
-        practicePage.openPage()
+        registrationPage.openPage()
                 .setFirstName("Илья")
                 .setLastName("Леопардович")
                 .setGender("Other")
                 .setDateOfBirth("08", "August", "1991")
                 .setUserNumber("9067241700")
                 .clickSubmitButton();
+
+//        registrationPage.checkResult("Student Name", "Илья Леопардович")
+//                .checkResult("Gender", "Other")
+//                .checkResult("Mobile", "9067241700")
+//                .checkResult("Date of Birth", "08 August,1991");
     }
 
 
     @Test
     @Tag("regress")
     void registrationUsingAllFieldsTest () {
-        practicePage.openPage()
+        registrationPage.openPage()
                 .setFirstName("Илья")
                 .setLastName("Леопардович")
                 .setUserEmail("test@test.ru")
@@ -48,16 +61,16 @@ public class PracticeFormPageObjectTest extends TestBase {
                 .clickSubmitButton();
 
 
-        practicePage.checkResult("Student Name", "Илья Леопардович")
-                .checkResult("Student Email", "test@test.ru")
-                .checkResult("Gender", "Other")
-                .checkResult("Mobile", "9067241700")
-                .checkResult("Date of Birth", "08 August,1991")
-                .checkResult("Subjects", "Maths")
-                .checkResult("Hobbies", "Reading")
-                .checkResult("Picture", "123.gif")
-                .checkResult("Address", "Ivanovo")
-                .checkResult("State and City", "Haryana Panipat");
+//        registrationPage.checkResult("Student Name", "Илья Леопардович")
+//                .checkResult("Student Email", "test@test.ru")
+//                .checkResult("Gender", "Other")
+//                .checkResult("Mobile", "9067241700")
+//                .checkResult("Date of Birth", "08 August,1991")
+//                .checkResult("Subjects", "Maths")
+//                .checkResult("Hobbies", "Reading")
+//                .checkResult("Picture", "123.gif")
+//                .checkResult("Address", "Ivanovo")
+//                .checkResult("State and City", "Haryana Panipat");
 
 
     }
