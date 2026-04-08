@@ -4,6 +4,10 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
+import java.util.Map;
+
+import static enums.ResultTableEnums.*;
+
 public class PracticeFormPageObjectTest extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
@@ -58,20 +62,20 @@ public class PracticeFormPageObjectTest extends TestBase {
                 .setState("Haryana")
                 .setCity("Panipat")
                 .uploadPicture("123.gif")
-                .clickSubmitButton();
+                .clickSubmitButton()
 
-
-//        registrationPage.checkResult("Student Name", "Илья Леопардович")
-//                .checkResult("Student Email", "test@test.ru")
-//                .checkResult("Gender", "Other")
-//                .checkResult("Mobile", "9067241700")
-//                .checkResult("Date of Birth", "08 August,1991")
-//                .checkResult("Subjects", "Maths")
-//                .checkResult("Hobbies", "Reading")
-//                .checkResult("Picture", "123.gif")
-//                .checkResult("Address", "Ivanovo")
-//                .checkResult("State and City", "Haryana Panipat");
-
+                .checkResultTitle()
+                .checkResultTable(Map.of(
+                        STUDENT_NAME, "Илья" + " " + "Леопардович",
+                        STUDENT_EMAIL, "test@test.ru",
+                        GENDER, "Other",
+                        MOBILE, "9067241700",
+                        DATE_OF_BIRTH, "08" + " " + "August" + "," + "1991",
+                        SUBJECTS, "Maths",
+                        HOBBIES, "Reading",
+                        PICTURE, "123.gif",
+                        ADDRESS, "Ivanovo",
+                        STATE_AND_CITY, "Haryana" + " " + "Panipat"));
 
     }
 }
