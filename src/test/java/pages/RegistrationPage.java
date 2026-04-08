@@ -122,11 +122,10 @@ public class RegistrationPage {
 //
 //    }
 
-public RegistrationPage checkResultTitle() {
-    resultTableComponent.checkTitle();
-    return this;
-}
-
+    public RegistrationPage checkResultTitle() {
+        resultTableComponent.checkTitle();
+        return this;
+    }
 
     public RegistrationPage checkResultTable(Map<ResultTableEnums, String> results) {
         results.forEach((key, value) -> resultTableComponent.checkTable(key, value));
@@ -138,4 +137,3 @@ public RegistrationPage checkResultTitle() {
         return this;
     }
 }
-
