@@ -14,21 +14,14 @@ public class PracticeFormPageObjectTest extends TestBase {
 
     @Test
     @Tag("negative")
-    void negativeRegistrationTest (){
+    void invalidPhoneRegistrationTest() {
         registrationPage.openPage()
                 .setFirstName("Илья")
                 .setLastName("Леопардович")
-                .setGender("Other")
-                .setDateOfBirth("08", "August", "1991")
                 .setUserNumber("90672417")
                 .clickSubmitButton()
 
-                .checkResultTitle()
-                .checkResultTable(Map.of(
-                        STUDENT_NAME, "Илья" + " " + "Леопардович",
-                        GENDER, "Other",
-                        MOBILE, "9067241700",
-                        DATE_OF_BIRTH, "08" + " " + "August" + "," + "1991"));
+                .checkTitleMissing();
     }
 
 
