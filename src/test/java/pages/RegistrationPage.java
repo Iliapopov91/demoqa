@@ -120,8 +120,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage checkTitleMissing() {
+    public void checkTitleMissing() {
         resultTableComponent.checkTitleMissing() ;
-        return this;
     }
 }
