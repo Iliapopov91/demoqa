@@ -12,22 +12,26 @@ public class PracticeFormPageObjectTest extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
-//    @Test
-//    @Tag("negative")
-//    void negativeRegistrationTest (){
-//        practicePage.openPage()
-//                .setFirstName("Илья")
-//                .setLastName("Леопардович")
-//                .setGender("Other")
-//                //.setDateOfBirth("08", "August", "1991")
-//                .setUserNumber("9067241700")
-//                .clickSubmitButton();
-//
-//        practicePage.checkResult("Student Name", "Илья Леопардович")
-//                .checkResult("Gender", "Other")
-//                .checkResult("Mobile", "9067241700")
-//                .checkResult("Date of Birth","");
-//    }
+    @Test
+    @Tag("negative")
+    void negativeRegistrationTest (){
+        registrationPage.openPage()
+                .setFirstName("Илья")
+                .setLastName("Леопардович")
+                .setGender("Other")
+                .setDateOfBirth("08", "August", "1991")
+                .setUserNumber("90672417")
+                .clickSubmitButton()
+
+                .checkResultTitle()
+                .checkResultTable(Map.of(
+                        STUDENT_NAME, "Илья" + " " + "Леопардович",
+                        GENDER, "Other",
+                        MOBILE, "9067241700",
+                        DATE_OF_BIRTH, "08" + " " + "August" + "," + "1991"));
+    }
+
+
     @Test
     @Tag("smoke")
     void shortRegistrationTest (){
@@ -37,12 +41,14 @@ public class PracticeFormPageObjectTest extends TestBase {
                 .setGender("Other")
                 .setDateOfBirth("08", "August", "1991")
                 .setUserNumber("9067241700")
-                .clickSubmitButton();
+                .clickSubmitButton()
 
-//        registrationPage.checkResult("Student Name", "Илья Леопардович")
-//                .checkResult("Gender", "Other")
-//                .checkResult("Mobile", "9067241700")
-//                .checkResult("Date of Birth", "08 August,1991");
+                .checkResultTitle()
+                .checkResultTable(Map.of(
+                        STUDENT_NAME, "Илья" + " " + "Леопардович",
+                        GENDER, "Other",
+                        MOBILE, "9067241700",
+                        DATE_OF_BIRTH, "08" + " " + "August" + "," + "1991"));
     }
 
 

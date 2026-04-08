@@ -33,10 +33,6 @@ public class RegistrationPage {
     visibleHeader = $("#example-modal-sizes-title-lg"),
     resultTable = $(".table-responsive");
 
-
-
-
-
     CalendarComponent calendarComponent = new CalendarComponent();
     ResultTableComponent resultTableComponent = new ResultTableComponent();
 
@@ -113,14 +109,6 @@ public class RegistrationPage {
         submitButton.click();
         return this;
     }
-
-//    //Проверка - вынести в отдельный java class (пересмотреть где озвучивают дз)
-//    public RegistrationPage checkResult (String key, String value) {
-//        $(".table-responsive").$(byText(key)).parent()
-//                .shouldHave(text(value));
-//        return this;
-//
-//    }
 
     public RegistrationPage checkResultTitle() {
         resultTableComponent.checkTitle();
