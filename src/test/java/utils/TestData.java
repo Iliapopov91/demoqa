@@ -65,6 +65,7 @@ public class TestData {
 
         return getRandomItemArray(subjects);
     }
+
     public String getRandomDay() {
         return String.valueOf(faker.number().numberBetween(1, 28));
     }
@@ -83,7 +84,6 @@ public class TestData {
     public String getRandomState() {
         String[] state = new String[]{faker.options()
                 .option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan")};
-       // {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
 
         return getRandomItemArray(state);
     }
@@ -95,7 +95,7 @@ public class TestData {
         if (state.equals("Rajasthan")) city = faker.options().option("Jaipur", "Jaiselmer");
         return city;
     }
-    //обработка массива значений (сейчас используется в связке с полом, но можно и другие массивы)
+    //обработка массива значений
     public static String getRandomItemArray(String[] array) {
         int index = getRandomInt(0, array.length - 1);
 
