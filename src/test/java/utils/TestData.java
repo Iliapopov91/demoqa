@@ -5,7 +5,6 @@ import com.github.javafaker.Faker;
 import java.security.SecureRandom;
 import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
-
 import static utils.RandomUtils.getRandomInt;
 
 public class TestData {

@@ -27,24 +27,24 @@ public class PracticeFormPageObjectTest extends TestBase {
     }
 
 
-//    @Test
-//    @Tag("smoke")
-//    void shortRegistrationTest (){
-//        registrationPage.openPage()
-//                .setFirstName(testData.firstName)
-//                .setLastName(testData.lastName)
-//                .setGender(testData.gender)
-//                .setDateOfBirth(testData.day, testData.month, testData.year)
-//                .setUserNumber(testData.phoneNumber)
-//                .clickSubmitButton()
-//
-//                .checkResultTitle()
-//                .checkResultTable(Map.of(
-//                        STUDENT_NAME, testData.firstName + " " + testData.lastName,
-//                        GENDER, testData.gender,
-//                        MOBILE, testData.phoneNumber,
-//                        DATE_OF_BIRTH, testData.day, testData.month, testData.year));
-//    }
+    @Test
+    @Tag("smoke")
+    void shortRegistrationTest (){
+        registrationPage.openPage()
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setGender(testData.gender)
+                .setDateOfBirth(testData.day, testData.month, testData.year)
+                .setUserNumber(testData.phoneNumber)
+                .clickSubmitButton()
+
+                .checkResultTitle()
+                .checkResultTable(Map.of(
+                        STUDENT_NAME, testData.firstName + " " + testData.lastName,
+                        GENDER, testData.gender,
+                        MOBILE, testData.phoneNumber,
+                        DATE_OF_BIRTH, testData.day + " " + testData.month + "," + testData.year));
+    }
 
 
     @Test

@@ -7,7 +7,7 @@ public class RandomUtils {
 
 
     public static void main(String[] args) {
-    System.out.println(getRandomString(10));
+        System.out.println(getRandomString(10));
         System.out.println(getRandomEmail());
         System.out.println(getRandomAddress());
         System.out.println(getRandomInt(111, 999999999));
@@ -39,10 +39,10 @@ public class RandomUtils {
     }
 
     public static String getRandomPhone () {
-       return String.format("+%s (%s) %s - %s - %s", getRandomInt(1, 9), getRandomInt(111, 999),
-               getRandomInt(111, 999), getRandomInt(11, 99), getRandomInt(11, 99));
+        return String.format("+%s (%s) %s - %s - %s", getRandomInt(1, 9), getRandomInt(111, 999),
+                getRandomInt(111, 999), getRandomInt(11, 99), getRandomInt(11, 99));
     }
-//рандом пола из массива значений (потом на скопировать на хобби и будет работать)
+    //рандом пола из массива значений (потом на скопировать на хобби и будет работать)
     public static String getRandomGender() {
         String[] genders = {"Male", "Female", "Other"};
 
