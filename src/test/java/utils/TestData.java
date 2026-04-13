@@ -23,6 +23,7 @@ public class TestData {
             day = getRandomDay(),
             month = getRandomMonth(),
             year = getRandomYear(),
+            uploadFile = getRandomFile(),
             subjects = getRandomSubjects(),
             state = getRandomState(),
             city = getRandomCity();
@@ -95,6 +96,11 @@ public class TestData {
         if (state.equals("Rajasthan")) city = faker.options().option("Jaipur", "Jaiselmer");
         return city;
     }
+
+    public String getRandomFile(){
+        return faker.options().option("123.gif", "456.gif");
+    }
+
     //обработка массива значений
     public static String getRandomItemArray(String[] array) {
         int index = getRandomInt(0, array.length - 1);

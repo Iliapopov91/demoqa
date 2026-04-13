@@ -62,7 +62,7 @@ public class PracticeFormPageObjectTest extends TestBase {
                 .setSubjects(testData.subjects)
                 .setState(testData.state)
                 .setCity(testData.city)
-                .uploadPicture("123.gif")
+                .uploadPicture(testData.uploadFile)
                 .clickSubmitButton()
 
                 .checkResultTitle()
@@ -74,7 +74,7 @@ public class PracticeFormPageObjectTest extends TestBase {
                         DATE_OF_BIRTH, testData.day + " " + testData.month + "," + testData.year,
                         SUBJECTS, testData.subjects,
                         HOBBIES, testData.hobbies,
-                        PICTURE, "123.gif",
+                        PICTURE, testData.uploadFile,
                         ADDRESS, testData.streetAddress,
                         STATE_AND_CITY, testData.state + " " + testData.city));
 
