@@ -2,6 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import utils.TestData;
@@ -10,13 +11,20 @@ import java.util.Map;
 
 import static enums.ResultTableEnums.*;
 
+@DisplayName("Тесты на форму регистрации")
 public class PracticeFormPageObjectTest extends TestBase {
     TestData testData = new TestData();
 
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
-    @Tag("negative")
+    @Tags(
+            {
+            @Tag("negative"),
+            @Tag("smoke")
+    }
+    )
+
     @DisplayName("Заполнение не всех обязательных полей")
     void invalidPhoneRegistrationTest() {
         registrationPage.openPage()
