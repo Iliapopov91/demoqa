@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
@@ -16,6 +17,7 @@ public class PracticeFormPageObjectTest extends TestBase {
 
     @Test
     @Tag("negative")
+    @DisplayName("Заполнение не всех обязательных полей")
     void invalidPhoneRegistrationTest() {
         registrationPage.openPage()
                 .setFirstName(testData.firstName)
@@ -29,6 +31,7 @@ public class PracticeFormPageObjectTest extends TestBase {
 
     @Test
     @Tag("smoke")
+    @DisplayName("Заполнение только обязательных полей")
     void shortRegistrationTest (){
         registrationPage.openPage()
                 .setFirstName(testData.firstName)
@@ -49,6 +52,7 @@ public class PracticeFormPageObjectTest extends TestBase {
 
     @Test
     @Tag("regress")
+    @DisplayName("Заполнение всех полей")
     void registrationUsingAllFieldsTest () {
         registrationPage.openPage()
                 .setFirstName(testData.firstName)
