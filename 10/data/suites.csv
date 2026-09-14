@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1770","Заполнение только обязательных полей","","2026-09-14","passed","2026-09-14","","Тесты формы регистрации","tests.PracticeFormPageObjectTest","shortRegistrationTest"
+"","2098","Заполнение не всех обязательных полей","","2026-09-14","passed","2026-09-14","","Тесты формы регистрации","tests.PracticeFormPageObjectTest","invalidPhoneRegistrationTest"
+"","6590","Заполнение всех полей","","2026-09-14","broken","2026-09-14","","Тесты формы регистрации","tests.PracticeFormPageObjectTest","registrationUsingAllFieldsTest"
+"","3394","practiceForm()","","2026-09-14","passed","2026-09-14","","tests.PracticeFormTest","tests.PracticeFormTest","practiceForm"
