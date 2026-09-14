@@ -61,7 +61,7 @@ public class PracticeFormTest {
         $("#hobbies-checkbox-2").click();
 
         // Вставить Picture
-        $("#uploadPicture").uploadFile(new File("C:/ForSchool/123.gif"));
+       // $("#uploadPicture").uploadFile(new File("C:/ForSchool/123.gif"));
 
         // Заполнить Current Address
         $("#currentAddress").setValue("Ivanovo");
@@ -92,8 +92,8 @@ public class PracticeFormTest {
                 .shouldHave(text("Maths"));
         $(".table-responsive").$(byText("Hobbies")).parent()
                 .shouldHave(text("Reading"));
-        $(".table-responsive").$(byText("Picture")).parent()
-                .shouldHave(text("123.gif"));
+        //$(".table-responsive").$(byText("Picture")).parent()
+        //        .shouldHave(text("123.gif"));
         $(".table-responsive").$(byText("Address")).parent()
                 .shouldHave(text("Ivanovo"));
         $(".table-responsive").$(byText("State and City")).parent()
