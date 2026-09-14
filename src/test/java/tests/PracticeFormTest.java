@@ -28,9 +28,8 @@ public class PracticeFormTest {
         Configuration.holdBrowserOpen = true;
     }
 
-    @Disabled("Старый тест")
     @Test
-    public void practiceForm() {
+    public void practiceForm () {
 
         //Открыть demoqa
         open("/automation-practice-form");
