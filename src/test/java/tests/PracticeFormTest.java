@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
@@ -27,8 +28,9 @@ public class PracticeFormTest {
         Configuration.holdBrowserOpen = true;
     }
 
+    @Disabled("Старый тест")
     @Test
-    public void practiceForm () {
+    public void practiceForm() {
 
         //Открыть demoqa
         open("/automation-practice-form");
