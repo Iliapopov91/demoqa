@@ -23,7 +23,7 @@ jobs:
       - name: Check Selenoid is up
         run: curl -sSf http://localhost:4444/status
 
-      - run: ./gradlew clean test -Dselenide.remote=http://localhost:4444/wd/hub
+      - run: ./gradlew clean test --info --stacktrace -Dselenide.remote=http://localhost:4444/wd/hub
 
       - uses: actions/checkout@v4
         if: always()
