@@ -111,7 +111,13 @@ public class RegistrationPage {
 
     @Step("Загрузить фотографию: {fileName}")
     public RegistrationPage uploadPicture(String fileName) {
-        File file = new File("C:/ForSchool/" + fileName);
+        File file = new File(
+                getClass()
+                        .getClassLoader()
+                        .getResource("files/" + fileName)
+                        .getFile()
+        );
+
         uploadPicture.uploadFile(file);
         return this;
     }
