@@ -1,6 +1,6 @@
 package pages;
 
-
+import io.qameta.allure.Step;
 import com.codeborne.selenide.SelenideElement;
 import enums.ResultTableEnums;
 import pages.components.CalendarComponent;
@@ -36,91 +36,101 @@ public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
     ResultTableComponent resultTableComponent = new ResultTableComponent();
 
-    //Открыть страницу "/automation-practice-form"
+    @Step("Открыть страницу регистрации")
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         return this;
     }
 
-    //Ввести имя
+    @Step("Заполнить имя: {value}")
     public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
-            return this;
+        return this;
     }
-    //Ввести фамилию
+
+    @Step("Заполнить фамилию: {value}")
     public RegistrationPage setLastName(String value) {
         lastNameInput.setValue(value);
-             return this;
+        return this;
     }
-    //Ввести eMail
+
+    @Step("Заполнить email: {value}")
     public RegistrationPage setUserEmail(String value) {
         userEmailInput.setValue(value);
         return this;
     }
-    //Ввести номер телефрна
-    public RegistrationPage setUserNumber(String value) {
-        userNumberInput.setValue(value);
-        return this;
-    }
-    //Ввести адрес
-    public RegistrationPage setCurrentAddress(String value) {
-        currentAddressInput.setValue(value);
-        return this;
-    }
-    //Указать пол
+
+    @Step("Указать пол: {value}")
     public RegistrationPage setGender(String value) {
         genderWrapper.$(byText(value)).click();
         return this;
     }
-    //Указать дату рождения
+
+    @Step("Указать дату рождения: {day} {month} {year}")
     public RegistrationPage setDateOfBirth(String day, String month, String year) {
         calendarInput.click();
         new CalendarComponent().setDate(day, month, year);
         return this;
     }
-    //Выбрать хобби
+
+    @Step("Заполнить номер телефона: {value}")
+    public RegistrationPage setUserNumber(String value) {
+        userNumberInput.setValue(value);
+        return this;
+    }
+
+    @Step("Заполнить текущий адрес: {value}")
+    public RegistrationPage setCurrentAddress(String value) {
+        currentAddressInput.setValue(value);
+        return this;
+    }
+
+    @Step("Указать хобби: {value}")
     public RegistrationPage setHobbies(String value) {
         hobbiesWrapper.$(byText(value)).click();
         return this;
     }
-    //Выбрать предметы
+
+    @Step("Указать предмет: {value}")
     public RegistrationPage setSubjects(String value) {
         subjectsInput.setValue(value).pressEnter();
         return this;
     }
-    //Выбрать штат
+
+    @Step("Указать штат: {value}")
     public RegistrationPage setState(String value) {
         stateList.setValue(value).pressEnter();
         return this;
     }
-    //Выбрать город
+
+    @Step("Указать город: {value}")
     public RegistrationPage setCity(String value) {
         cityList.setValue(value).pressEnter();
         return this;
     }
-    //Загрузить картинку
+
+    @Step("Загрузить фотографию: {fileName}")
     public RegistrationPage uploadPicture(String fileName) {
         File file = new File("C:/ForSchool/" + fileName);
         uploadPicture.uploadFile(file);
         return this;
     }
-    //Нажать Submit
+
+    @Step("Нажать кнопку Submit")
     public RegistrationPage clickSubmitButton() {
         submitButton.click();
         return this;
     }
 
+    @Step("Проверить заголовок таблицы результатов")
     public RegistrationPage checkResultTitle() {
         resultTableComponent.checkTitle();
         return this;
     }
 
+    @Step("Проверить данные в таблице результатов")
     public RegistrationPage checkResultTable(Map<ResultTableEnums, String> results) {
         results.forEach((key, value) -> resultTableComponent.checkTable(key, value));
         return this;
-    }
-
-    public void checkTitleMissing() {
-        resultTableComponent.checkTitleMissing() ;
     }
 }
