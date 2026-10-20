@@ -22,6 +22,7 @@ public class TestBase {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
 
+
         addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(false)
                 .savePageSource(true));
