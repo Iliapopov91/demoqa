@@ -15,17 +15,12 @@ public class PracticeFormTest {
     @BeforeAll
     static void beforeAll() {
 
-        //Задаём разрешение браузера
-        Configuration.browserSize= "2560x1440";
+        Configuration.browser = "chrome";
+        Configuration.headless = true;
+        Configuration.browserSize = "1920x1080";
 
-        //Задаём URL
         Configuration.baseUrl = "https://demoqa.com";
-
-        //Пропускаем полную загрузку страницы
         Configuration.pageLoadStrategy = "eager";
-
-        //Оставляем браузер открытым
-        Configuration.holdBrowserOpen = true;
     }
 
     @Test
