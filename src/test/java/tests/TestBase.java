@@ -15,10 +15,12 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browserSize = "2560x1440";
+        Configuration.browser = "chrome";
+        Configuration.headless = true;
+        Configuration.browserSize = "1920x1080";
+
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
 
         addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(false)
