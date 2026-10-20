@@ -36,4 +36,7 @@ dependencies {
 test {
     useJUnitPlatform()
     systemProperties(System.getProperties())
+
+    systemProperty "webdriver.chrome.driver",
+            "/usr/bin/chromedriver"
 }
